@@ -1,9 +1,8 @@
 $(document).ready( function() {
 	$('form.ajax').on('submit', function() {
-
 		var form = $(this),
-			url = this.attr('url'),
-			type = this.attr('type'),
+			url = form.attr('url'),
+			type = form.attr('type'),
 			data = {};
 
 		form.find('[name]').each(function() {
@@ -19,8 +18,8 @@ $(document).ready( function() {
 			type: type,
 			data: data,
 			success: function(response) {
-      			alert(reponse);
-      		}
+      			alert(response);
+      		},
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
 				alert(XMLHttpRequest.status);
 			}
